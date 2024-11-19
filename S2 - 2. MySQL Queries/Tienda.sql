@@ -1,13 +1,13 @@
 USE tienda;
 
 -- 1. List the names of all the products that are in the product table.
-SELECT nombre FROM product;
+SELECT nombre FROM producto;
 
 -- 2. List the names and prices of all products in the product table
-SELECT nombre, precio FROM product;
+SELECT nombre, precio FROM producto;
 
 -- 3. List all columns in the product table
-SELECT * FROM product;
+SELECT * FROM producto;
 
 -- 4. List the product names, prices in euros, and prices in U.S. dollars (USD)
 SELECT nombre, precio, CONCAT('$ ', precio) AS precio_dolares
