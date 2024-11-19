@@ -2,10 +2,10 @@
 db.restaurants.find()
 
 // 2. Write a query to show the restaurant_id, name, borough, and cuisine for all the documents in the Restaurants collection.
-db.restaurants.find({}, {restaurante_id: 1, name: 1,  borough: 1, cousine: 1})
+db.restaurants.find({}, {restaurant_id: 1, name: 1,  borough: 1, cuisine: 1})
 
 // 3. Write a query to show the restaurant_id, name, borough, and cuisine, but exclude the _id field for all the documents in the Restaurants collection.
-db.restaurants.find({}, {_id: 0, restaurante_id: 1, name: 1,  borough: 1, cousine: 1})
+db.restaurants.find({}, {_id: 0, restaurant_id: 1, name: 1,  borough: 1, cuisine: 1})
 
 // 4. Write a query to show restaurant_id, name, borough, and zip code, but exclude the _id field for all the documents in the Restaurants collection.
 db.restaurants.find({}, {_id: 0, restaurant_id: 1, name: 1, borough: 1, 'address.zipcode': 1})
@@ -30,6 +30,7 @@ db.restaurants.find({'address.coord': {$lt: -95.754168}})
 
 // 11. Write a MongoDB query to find the restaurants that do not serve any 'American' cuisine, have a rating greater than 70, and a longitude less than -65.754168.
 db.restaurants.find({$and: [{cuisine: {$not: /American/}}, {'grades.score': {$gt: 70}}, {'address.coord': {$lt: -65.754168}}]})
+// Intent without '&and' -> db.usuarios.find({cuisine: {$not: /American/}, 'grades.score': {$gt: 70}, 'address.coord': {$lt: -65.754168}})
 
 // 12. Write a query to find the restaurants that do not serve any 'American' cuisine, have a score greater than 70, and are located at a longitude less than -65.754168. Note: Perform this query without using the $and operator.
 db.restaurants.find({cuisine: {$not: /American/}, 'grades.score': {$gt: 70}, 'address.coord': {$lt: -65.754168}})
